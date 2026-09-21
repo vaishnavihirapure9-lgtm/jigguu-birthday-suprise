@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Jiggu ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600&family=Pacifico&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#f9dce9; --pink2:#f7c8dc; --lav:#ddd7f5; --blue:#d6e8f7;
+      --cream:#fffaf7; --ink:#574b61; --deep:#735f87; --white:#fff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; color:var(--ink);
+      font-family:"DM Sans",sans-serif;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(249,220,233,.9), transparent 26%),
+        radial-gradient(circle at 88% 18%, rgba(214,232,247,.9), transparent 27%),
+        radial-gradient(circle at 50% 90%, rgba(221,215,245,.8), transparent 34%),
+        linear-gradient(135deg,#fffafc,#f9f5ff 48%,#f3f9ff);
+      overflow-x:hidden;
+    }
+    button{font:inherit}
+    .screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;position:relative}
+    .hidden{display:none!important}
+
+    /* opening */
+    #opening{overflow:hidden}
+    .cloud{position:absolute;border-radius:999px;filter:blur(1px);opacity:.55;animation:float 7s ease-in-out infinite}
+    .cloud.c1{width:190px;height:80px;background:#fff;left:-35px;top:12%;animation-delay:-2s}
+    .cloud.c2{width:230px;height:95px;background:#fff;right:-55px;top:25%;animation-delay:-4s}
+    .cloud.c3{width:170px;height:65px;background:#fff;left:8%;bottom:8%;animation-delay:-1s}
+    @keyframes float{50%{transform:translateY(-12px)}}
+
+    .opening-card{
+      width:min(920px,94vw); min-height:620px; padding:44px 30px 34px;
+      border:1px solid rgba(255,255,255,.85); border-radius:38px;
+      background:rgba(255,255,255,.56); backdrop-filter:blur(16px);
+      box-shadow:0 25px 80px rgba(120,93,145,.15);
+      text-align:center; position:relative; z-index:3;
+    }
+    .tiny{letter-spacing:.18em;text-transform:uppercase;font-size:11px;font-weight:700;color:#927ca5}
+    .opening-card h1{font-family:Pacifico,cursive;font-size:clamp(42px,7vw,74px);font-weight:400;margin:12px 0 5px;color:#a46f95}
+    .opening-card p{margin:0 auto 20px;max-width:520px;line-height:1.7;color:#746a7d}
+    .cartoon-wrap{
+      width:min(340px,72vw);height:300px;margin:0 auto 20px;border-radius:40% 40% 30% 30%;
+      background:linear-gradient(180deg,#e7dcf8,#d9eafa);display:flex;align-items:center;justify-content:center;
+      box-shadow:inset 0 0 35px rgba(255,255,255,.8),0 18px 45px rgba(120,93,145,.15);
+      overflow:hidden; position:relative;
+    }
+    .cartoon-wrap img{width:100%;height:100%;object-fit:cover}
+    .sparkle{position:absolute;font-size:24px;animation:spark 2.2s ease-in-out infinite}
+    .s1{left:14%;top:25%}.s2{right:14%;top:20%;animation-delay:.5s}.s3{left:23%;bottom:15%;animation-delay:1s}.s4{right:22%;bottom:20%;animation-delay:1.4s}
+    @keyframes spark{0%,100%{transform:scale(.75) rotate(0);opacity:.35}50%{transform:scale(1.2) rotate(12deg);opacity:1}}
+    .enter{
+      border:0;cursor:pointer;color:#654f6f;background:linear-gradient(135deg,#f7cfe1,#dcd5f7,#d4e8f7);
+      padding:14px 25px;border-radius:999px;font-weight:700;box-shadow:0 12px 30px rgba(150,110,160,.18);
+      transition:.25s transform,.25s box-shadow
+    }
+    .enter:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(150,110,160,.25)}
+
+    /* gifts */
+    #gifts{padding-top:45px;padding-bottom:45px}
+    .gift-shell{width:min(1040px,95vw);text-align:center;position:relative;z-index:3}
+    .gift-shell h2{font-family:Pacifico,cursive;font-size:clamp(36px,6vw,58px);font-weight:400;color:#9b6d92;margin:5px 0}
+    .gift-shell .sub{color:#7c7285;margin:0 auto 30px}
+    .gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
+    .gift{
+      min-height:260px;border:1px solid rgba(255,255,255,.9);border-radius:30px;
+      background:rgba(255,255,255,.63);box-shadow:0 18px 50px rgba(120,93,145,.13);
+      cursor:pointer;position:relative;overflow:hidden;transition:.25s transform;
+    }
+    .gift:hover{transform:translateY(-7px) rotate(-1deg)}
+    .gift:nth-child(2){transform:rotate(1deg)} .gift:nth-child(2):hover{transform:translateY(-7px) rotate(0)}
+    .gift:nth-child(3){transform:rotate(-1deg)} .gift:nth-child(3):hover{transform:translateY(-7px) rotate(0)}
+    .gift-icon{font-size:82px;margin-top:28px;filter:drop-shadow(0 8px 10px rgba(100,80,120,.12))}
+    .gift h3{margin:5px 18px 8px;color:#715d7d;font-size:19px}
+    .gift small{display:block;padding:0 20px;color:#918699;line-height:1.5}
+    .gift-tape{position:absolute;top:0;left:50%;transform:translateX(-50%);width:56px;height:20px;background:rgba(248,201,220,.75);border-radius:0 0 8px 8px}
+
+    /* modal */
+    .modal{position:fixed;inset:0;background:rgba(83,66,96,.25);backdrop-filter:blur(9px);display:flex;align-items:center;justify-content:center;padding:18px;z-index:20}
+    .modal-card{width:min(900px,96vw);max-height:92vh;overflow:auto;border-radius:30px;background:rgba(255,251,250,.96);box-shadow:0 30px 100px rgba(67,48,85,.25);padding:28px;position:relative}
+    .close{position:absolute;right:16px;top:14px;border:0;background:#eee7f3;color:#725e7e;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:20px}
+    .modal-title{font-family:Pacifico,cursive;font-size:38px;font-weight:400;color:#9b6d92;text-align:center;margin:6px 0 18px}
+    .letter-paper{
+      background:linear-gradient(135deg,#fffdfd,#fff7fb 48%,#f8f5ff);border-radius:24px;padding:30px;
+      border:1px solid #f0dfe9;box-shadow:inset 0 0 35px rgba(214,203,239,.18);
+      font-family:"Caveat",cursive;line-height:1.7;font-size:20px;font-weight:400;position:relative;
+    }
+    .letter-paper .to{font-family:Pacifico,cursive;font-size:27px;color:#a06f93}
+    .letter-paper .sign{font-family:Pacifico,cursive;text-align:right;font-size:22px;color:#916a8b}
+    .letter-photos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0;align-items:center}
+    .letter-photos img{width:100%;height:auto;max-height:430px;object-fit:contain;background:#fff;border-radius:17px;box-shadow:0 10px 22px rgba(100,80,110,.13);transform:rotate(-1.5deg)}
+    .letter-photos img:nth-child(2){transform:rotate(1.5deg)}
+
+    /* music */
+    .music-box{background:linear-gradient(135deg,#e1dcf8,#d9ebf8,#f7dce9);border-radius:25px;padding:28px;text-align:center}
+    .music-note{font-size:58px}
+    .music-player{background:rgba(255,255,255,.76);border-radius:20px;padding:20px;box-shadow:0 12px 30px rgba(100,80,120,.12)}
+    .play{border:0;width:68px;height:68px;border-radius:50%;background:#b38bb1;color:white;font-size:27px;cursor:pointer;box-shadow:0 8px 18px rgba(130,95,135,.2)}
+    .song-name{font-weight:700;color:#6e5c79;margin:10px 0 2px}
+    .song-sub{font-size:13px;color:#958a9b}
+    .lyrics{margin-top:20px;min-height:210px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+    .lyric{opacity:.28;transform:scale(.98);transition:.35s;color:#7b6a86;font-size:17px}
+    .lyric.active{opacity:1;transform:scale(1.04);font-weight:700;color:#9b6d92}
+    .note{font-size:12px;color:#958a9b;margin-top:15px}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .polaroid{background:#fff;padding:12px 12px 18px;border-radius:6px;box-shadow:0 12px 30px rgba(90,70,100,.14);transition:.25s}
+    .polaroid:nth-child(odd){transform:rotate(-1deg)} .polaroid:nth-child(even){transform:rotate(1deg)}
+    .polaroid:hover{transform:translateY(-5px) rotate(0)}
+    .polaroid img{width:100%;height:auto;max-height:430px;object-fit:contain;display:block;border-radius:2px}
+    .caption{font-family:"Caveat",cursive;color:#795e76;font-size:20px;font-weight:500;line-height:1.45;text-align:center;padding:13px 5px 0}
+    .gallery-footer{text-align:center;margin-top:20px;color:#8d7d91;font-style:italic}
+
+    .heart-float{position:fixed;font-size:20px;pointer-events:none;z-index:3;animation:rise 5s linear forwards}
+    @keyframes rise{from{transform:translateY(0) scale(.8);opacity:0}15%{opacity:.8}to{transform:translateY(-110vh) scale(1.15) rotate(20deg);opacity:0}}
+
+    @media(max-width:760px){
+      .gifts{grid-template-columns:1fr}
+      .gift{min-height:210px}
+      .letter-photos,.gallery{grid-template-columns:1fr}
+      .letter-photos img{height:auto;max-height:520px;object-fit:contain}
+      .polaroid img{height:auto;max-height:430px}
+      .opening-card{padding:30px 18px}
+    }
+  
+    #ambient, #ambientGifts{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+    #ambientGifts{position:fixed;z-index:1}
+    .ambient-particle{
+      position:absolute;pointer-events:none;color:#d99fbe;opacity:0;
+      animation:ambientFloat 4.8s ease-in-out forwards;
+      text-shadow:0 0 12px rgba(255,255,255,.85);
+    }
+    @keyframes ambientFloat{
+      0%{transform:translateY(30px) scale(.55) rotate(-10deg);opacity:0}
+      15%{opacity:.75}
+      55%{opacity:1}
+      100%{transform:translateY(-115px) scale(1.05) rotate(18deg);opacity:0}
+    }
+
+  </style>
+</head>
+<body>
+  <section id="opening" class="screen"><div id="ambient"></div>
+    <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+    <div class="opening-card">
+      <div class="tiny">a tiny birthday surprise</div>
+      <h1>Happy 19th, Jiggu ♡</h1>
+      <p>made with a little bit of love, a lot of memories, and way too many sparkles ✨</p>
+      <div class="cartoon-wrap">
+        <img src="assets/cartoon.jpeg" alt="cute birthday cartoon">
+        <span class="sparkle s1">✦</span><span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span><span class="sparkle s4">♡</span>
+      </div>
+      <button class="enter" onclick="openGifts()">open your little surprise 🎀</button>
+    </div>
+  </section>
+
+  <section id="gifts" class="screen hidden">
+    <div id="ambientGifts"></div><div class="gift-shell">
+      <div class="tiny">for my favourite person</div>
+      <h2>three little gifts for you 🎁</h2>
+      <p class="sub">because one birthday message was obviously not enough.</p>
+      <div class="gifts">
+        <button class="gift" onclick="showModal('letterModal')">
+          <span class="gift-tape"></span><div class="gift-icon">🎁</div>
+          <h3>something I wanted to tell you</h3><small>a tiny letter, from me to you 💌</small>
+        </button>
+        <button class="gift" onclick="showModal('musicModal')">
+          <span class="gift-tape"></span><div class="gift-icon">🎀</div>
+          <h3>type of friendship ppl write songs abt</h3><small>press play when you're ready 🎶</small>
+        </button>
+        <button class="gift" onclick="showModal('galleryModal')">
+          <span class="gift-tape"></span><div class="gift-icon">📸</div>
+          <h3>things that remind me of you</h3><small>little things that somehow always lead back to you ✨</small>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div id="letterModal" class="modal hidden" onclick="backdropClose(event,'letterModal')">
+    <div class="modal-card">
+      <button class="close" onclick="hideModal('letterModal')">×</button>
+      <div class="modal-title">to my Naina 💌</div>
+      <div class="letter-paper">
+        <div class="to">To my Naina 💌</div>
+        <p>Happy 19th birthday, my girl! 🎀<br>
+        It feels a little weird celebrating your birthday with you so far away, but I hope you know I’m always cheering for you from here.</p>
+        <div class="letter-photos">
+          <img src="assets/us_school.jpeg" alt="us at school">
+          <img src="assets/us_recent.jpeg" alt="us together">
+        </div>
+        <p>I genuinely love how confident you are, how you always manage things on your own and, most importantly, how you choose yourself. Watching you start your public account, do your side hustle, and chase all the things you want makes me so proud of you. 🥹💗</p>
+        <p>I can’t wait for all the trips we’re going to take, to see you become a doctor, watch you grow into the influencer you’re meant to be, and obviously create a million more memories together. And honestly, I’ll always love the friendship our dads have too — it makes our friendship even more special. 🫶🏻</p>
+        <p>Here’s to 19 and everything waiting for you.</p>
+        <div class="sign">Love you always,<br>yours Aditi. 💗✨</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="musicModal" class="modal hidden" onclick="backdropClose(event,'musicModal')">
+    <div class="modal-card">
+      <button class="close" onclick="closeMusic()">×</button>
+      <div class="modal-title">type of friendship ppl write songs abt 🎶</div>
+      <div class="music-box">
+        <div class="music-note">🎧</div>
+        <div class="music-player">
+          <button id="playBtn" class="play" onclick="toggleSong()">▶</button>
+          <div class="song-name">Kalank — Arijit Singh</div>
+          <div class="song-sub">our little friendship soundtrack ♡</div>
+          <audio id="song" src="assets/kalank_final.mp3" preload="metadata"></audio>
+          <div id="lyrics" class="lyrics"></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="galleryModal" class="modal hidden" onclick="backdropClose(event,'galleryModal')">
+    <div class="modal-card">
+      <button class="close" onclick="hideModal('galleryModal')">×</button>
+      <div class="modal-title">things that remind me of you ♡</div>
+      <div class="gallery">
+        <div class="polaroid"><img src="assets/doctor.jpg" alt="doctor"><div class="caption">Every time I see this, I see the doctor you’re becoming. So, so proud of you already. 🤍</div></div>
+        <div class="polaroid"><img src="assets/jhumkas.jpg" alt="jhumkas"><div class="caption">Jhumkas = you. You + traditional outfits + getting all dressed up = the most you thing ever. 🎀</div></div>
+        <div class="polaroid"><img src="assets/siddharth.jpg" alt="Siddharth Nigam"><div class="caption">Obviously him. Do I even need to explain? 😭</div></div>
+        <div class="polaroid"><img src="assets/manali.jpg" alt="Manali"><div class="caption">We went to Manali together, so now I don't think I'll ever see Manali without thinking of you. 🩵</div></div>
+        <div class="polaroid"><img src="assets/darkhast.jpg" alt="Darkhaast"><div class="caption">Your favourite song, your entire personality at this point… my certified Darkhaast-holic. 🎧</div></div>
+        <div class="polaroid"><img src="assets/frullato.jpg" alt="Frullato chocolate"><div class="caption">You love chocolate so much that now every time I pass Frullato, I automatically think of you. 🍫💗</div></div>
+      </div>
+      <div class="gallery-footer">different things, same you — and I love all of it. ✨</div>
+    </div>
+  </div>
+
+  <script>
+    const lyrics = [
+      "Main tera, main tera, main tera",
+      "Main tera, main tera, main tera",
+      "Main tera, main tera, main tera",
+      "Main gehra tamas, tu sunehra saveraa",
+      "Main tera, ho main tera",
+      "Musafir main bhatka, tu mera baseraa",
+      "Main tera, ho main tera",
+      "Tu jugnu chamakta, main jungle ghanera",
+      "Main tera",
+      "Ho, piya main tera, main tera, main tera",
+      "Main tera, main tera, ho main tera",
+      "Main tera, main tera, main tera",
+      "Main tera, main tera, main tera"
+    ];
+    const lyricTimes = [0,2.8,5.5,8.6,12.1,17.2,21.3,25.9,29.0,34.0,42.1,50.3,58.4];
+
+    let ambientTimer;
+    function startAmbient(targetId){
+      const target = document.getElementById(targetId);
+      if(!target) return;
+      const chars=['✦','✧','♡','✿','⋆','·'];
+      function add(){
+        const p=document.createElement('span');
+        p.className='ambient-particle';
+        p.textContent=chars[Math.floor(Math.random()*chars.length)];
+        p.style.left=(4+Math.random()*92)+'%';
+        p.style.top=(55+Math.random()*42)+'%';
+        p.style.fontSize=(13+Math.random()*18)+'px';
+        p.style.color=['#e7a9c8','#bca9df','#9fc8e4','#f2c9da'][Math.floor(Math.random()*4)];
+        target.appendChild(p);
+        setTimeout(()=>p.remove(),5000);
+      }
+      for(let i=0;i<18;i++) setTimeout(add,i*90);
+      return setInterval(add,420);
+    }
+
+    function openGifts(){
+      document.getElementById('opening').classList.add('hidden');
+      document.getElementById('gifts').classList.remove('hidden');
+      if(ambientTimer) clearInterval(ambientTimer);
+      ambientTimer=startAmbient('ambientGifts');
+      confettiBurst();
+    }
+
+    function showModal(id){
+      document.getElementById(id).classList.remove('hidden');
+      if(id==='musicModal') renderLyrics();
+    }
+    function hideModal(id){ document.getElementById(id).classList.add('hidden'); }
+    function backdropClose(e,id){ if(e.target.id===id) hideModal(id); }
+
+    const SONG_START = 252.0; // beginning of the 'Main tera...' ending verse in the supplied audio\n    const song=document.getElementById('song');
+    const playBtn=document.getElementById('playBtn');
+
+    function renderLyrics(){
+      const box=document.getElementById('lyrics');
+      box.innerHTML='';
+      lyrics.forEach((l,i)=>{
+        const d=document.createElement('div');
+        d.className='lyric'; d.id='ly'+i; d.textContent=l;
+        box.appendChild(d);
+      });
+    }
+    function toggleSong(){
+      if(song.paused){ song.play(); playBtn.textContent='❚❚'; }
+      else { song.pause(); playBtn.textContent='▶'; }
+    }
+    song.addEventListener('timeupdate',()=>{
+      const t=Math.max(0, song.currentTime);
+      let idx=0;
+      for(let i=0;i<lyricTimes.length;i++){ if(t>=lyricTimes[i]) idx=i; }
+      document.querySelectorAll('.lyric').forEach((x,i)=>x.classList.toggle('active',i===idx));
+    });
+    song.addEventListener('ended',()=>playBtn.textContent='▶');
+
+    function closeMusic(){
+      song.pause(); song.currentTime=0; playBtn.textContent='▶'; hideModal('musicModal');
+    }
+
+    function confettiBurst(){
+      const chars=['✦','✧','♡','✿','•'];
+      for(let i=0;i<70;i++){
+        const s=document.createElement('div');
+        s.className='heart-float';
+        s.textContent=chars[Math.floor(Math.random()*chars.length)];
+        s.style.left=(5+Math.random()*90)+'vw';
+        s.style.bottom=(5+Math.random()*20)+'vh';
+        s.style.fontSize=(12+Math.random()*22)+'px';
+        s.style.animationDuration=(3+Math.random()*3)+'s';
+        document.body.appendChild(s);
+        setTimeout(()=>s.remove(),6500);
+      }
+    }
+    function spawnHeart(){
+      const h=document.createElement('div');
+      h.className='heart-float'; h.textContent=['♡','✦','✧'][Math.floor(Math.random()*3)];
+      h.style.left=Math.random()*100+'vw'; h.style.bottom='-30px';
+      h.style.fontSize=(13+Math.random()*18)+'px';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),5500);
+    }
+
+    // Sparkles/confetti begin the moment the link opens.
+    window.addEventListener('DOMContentLoaded',()=>{
+      ambientTimer=startAmbient('ambient');
+      confettiBurst();
+      setTimeout(()=>confettiBurst(),1800);
+    });
+  </script>
+</body>
+</html>
